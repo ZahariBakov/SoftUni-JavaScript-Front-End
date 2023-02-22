@@ -6,14 +6,14 @@ function solve(firstNum, secondNum, thirdNum) {
     }
 
     else if (secondNum > thirdNum) {
-        result = secondNum
+        result = secondNum;
     }
 
     else {
-        result = thirdNum
+        result = thirdNum;
     }
 
-    console.log(`The largest number is ${result}.`)
+    console.log(`The largest number is ${result}.`);
 }
 
 solve(5, -3, 16)
