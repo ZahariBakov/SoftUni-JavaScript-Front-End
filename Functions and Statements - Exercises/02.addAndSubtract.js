@@ -1,7 +1,14 @@
 function addAndSubtract(firstNum, secondNum, thirdNum) {
-    let sumResult = firstNum + secondNum;
-    let subtractResult = sumResult - thirdNum;
-    console.log(subtractResult);
+    // First decision:
+    // let sumResult = firstNum + secondNum;
+    // let subtractResult = sumResult - thirdNum;
+    // console.log(subtractResult);
+
+    // Second decision:
+    let sum = (a, b) => a + b;
+    let subtract = (sum, num) => sum - num;
+
+    console.log(subtract(sum(firstNum, secondNum), thirdNum));
 }
 
 addAndSubtract(23, 6, 10);

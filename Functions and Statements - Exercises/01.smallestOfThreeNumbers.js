@@ -1,13 +1,17 @@
 function smallestOfThreeNumbers(...numbers) {
-    let smallestNum = numbers[0];
+    // First decision:
+    // let smallestNum = numbers[0];
 
-    for (let i = 1; i < numbers.length; i++) {
-        if (numbers[i] < smallestNum) {
-            smallestNum = numbers[i];
-        }
-    }
+    // for (let i = 1; i < numbers.length; i++) {
+    //     if (numbers[i] < smallestNum) {
+    //         smallestNum = numbers[i];
+    //     }
+    // }
 
-    console.log(smallestNum)
+    // console.log(smallestNum)
+
+    // Second decision:
+    console.log(Math.min(...numbers))
 }
 
 smallestOfThreeNumbers(2, 5, 3);
