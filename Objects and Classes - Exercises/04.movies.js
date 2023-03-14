@@ -18,10 +18,11 @@ function moviesParser(input) {
         }
     }
 
-    for (const movie of movies) {
-        if (movie.hasOwnProperty('name') && movie.hasOwnProperty('director') && movie.hasOwnProperty('date')) {
-            console.log(JSON.stringify(movie));
-        }
+    let filteredMovies = movies
+        .filter((movie) => movie.hasOwnProperty('name') && movie.hasOwnProperty('director') && movie.hasOwnProperty('date'));
+
+    for (const movie of filteredMovies) {
+        console.log(JSON.stringify(movie));
     }
 
     function addMovie(name) {
