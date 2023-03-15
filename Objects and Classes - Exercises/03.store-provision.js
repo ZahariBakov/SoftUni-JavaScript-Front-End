@@ -1,15 +1,38 @@
 function storeProvision(current, order) {
-    let combined = [...current, ...order];
-    let store = {};
+    // First decision:
+    // let combined = [...current, ...order];
+    // let store = {};
 
-    for (let i = 0; i < combined.length; i += 2) {
-        let prop = combined[i];
-        if (!store.hasOwnProperty(prop)) {
-            store[prop] = 0;
+    // for (let i = 0; i < combined.length; i += 2) {
+    //     let prop = combined[i];
+    //     if (!store.hasOwnProperty(prop)) {
+    //         store[prop] = 0;
+    //     }
+
+    //     store[prop] += Number(combined[i + 1]);
+    // }
+
+    // for (const key in store) {
+    //     console.log(`${key} -> ${store[key]}`);
+    // }
+
+    // Second decision:
+    let combined = [...current, ...order];
+    let store = combined.reduce((data, currentValue, index) => {
+        if(index % 2 === 0) {
+            if (!data.hasOwnProperty(currentValue)) {
+                data[currentValue] = 0;
+            }
+        }
+        
+        else {
+            let value = Number(currentValue);
+            let previousProp = combined[index - 1];
+            data[previousProp] += value;
         }
 
-        store[prop] += Number(combined[i + 1]);
-    }
+        return data
+    }, {});
 
     for (const key in store) {
         console.log(`${key} -> ${store[key]}`);

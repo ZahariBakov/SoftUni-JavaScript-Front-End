@@ -1,9 +1,16 @@
 function townsParser(array) {
-    for (const line of array) {
-        let [town, latitude, longitude] = line.split(' | ');
-        let townObj = {town, latitude: Number(latitude).toFixed(2), longitude: Number(longitude).toFixed(2)}
-        console.log(townObj);
-    }
+    // First decision:
+    // for (const line of array) {
+    //     let [town, latitude, longitude] = line.split(' | ');
+    //     let townObj = {town, latitude: Number(latitude).toFixed(2), longitude: Number(longitude).toFixed(2)}
+    //     console.log(townObj);
+    // }
+
+    // Second decision:
+    let newArray =  array
+        .map((line) => line.split(' | '))
+        .map(([town, latitude, longitude]) => ({town, latitude: Number(latitude).toFixed(2), longitude: Number(longitude).toFixed(2)}))
+        .forEach((townObj) => console.log(townObj));
 }
 
 townsParser(
