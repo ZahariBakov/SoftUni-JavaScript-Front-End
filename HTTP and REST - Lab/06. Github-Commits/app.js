@@ -1,4 +1,4 @@
-// Then and Catch blocks:
+// Promise way to resolve the task with Then and Catch blocks:
 
 function loadCommits() {
     const BASE_URL = 'https://api.github.com/repos/'
